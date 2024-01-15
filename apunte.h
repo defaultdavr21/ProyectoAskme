@@ -3,12 +3,8 @@
 
 #include <QString>
 
-class Apunte{
-
-private:
-    QString m_termino;
-    QString m_concepto;
-
+class Apunte
+{
 public:
     Apunte();
     Apunte(const QString &termino, const QString &concepto);
@@ -16,6 +12,10 @@ public:
     const QString &termino() const;
     const QString &concepto() const;
     const QString toString() const;
+
+private:
+    QString m_termino;
+    QString m_concepto;
 
 };
 
