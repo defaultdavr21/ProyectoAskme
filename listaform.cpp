@@ -5,10 +5,7 @@ ListaForm::ListaForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ListaForm){
     ui->setupUi(this);
-    connect(ui->cmbasignaturas, SIGNAL(currentIndexChanged(int)), this, SLOT(on_cmbasignaturas_currentIndexChanged(int)));
-    QList<Asignatura *> newAsignaturas;
-    setAsignaturas(newAsignaturas);
-    cargarAsignaturas();
+
 }
 ListaForm::~ListaForm(){
 
@@ -27,7 +24,7 @@ void ListaForm::cargarAsignaturas(){
         ui->cmbasignaturas->addItem(w->nombre());
     }
 
-    qDebug() << "Número de asignaturas en el combo box: " << ui->cmbasignaturas->count();
+
 }
 
 void ListaForm::on_cmbasignaturas_currentIndexChanged(int index){
@@ -38,6 +35,41 @@ void ListaForm::on_cmbasignaturas_currentIndexChanged(int index){
             ui->cmbtemas->addItem(t->nombre());
         }
     }
-    cargarAsignaturas();
+    cargarTabla();
 }
+void ListaForm::cargarTabla(){
+
+    ui->tableCargar->clearContents();
+        ui->tableCargar->setRowCount(0);
+
+        int rowCount = 0;
+
+        int asignaturaIndex = ui->cmbasignaturas->currentIndex();
+        if (asignaturaIndex >= 0 && asignaturaIndex < m_asignaturas->size())
+        {
+            Asignatura* asignatura = m_asignaturas->at(asignaturaIndex);
+
+            int temaIndex = ui->cmbtemas->currentIndex();
+            if (temaIndex >= 0 && temaIndex < asignatura->temas().size())
+            {
+                Tema* tema = asignatura->temas().at(temaIndex);
+
+                foreach (Apunte* apunte, tema->apuntes())
+                {
+                    // Insertar nueva fila en la tabla
+                    ui->tableCargar->insertRow(rowCount);
+
+                    // Rellenar celdas con datos
+                    QTableWidgetItem* itemTermino = new QTableWidgetItem(apunte->termino());
+                    ui->tableCargar->setItem(rowCount, 0, itemTermino);
+
+                    QTableWidgetItem* itemConcepto = new QTableWidgetItem(apunte->concepto());
+                    ui->tableCargar->setItem(rowCount, 1, itemConcepto);
+
+                    // Incrementar el contador de filas
+                    rowCount++;
+                }
+            }
+        }
+    }
 

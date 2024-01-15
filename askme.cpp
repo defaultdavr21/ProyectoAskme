@@ -158,9 +158,12 @@ void Askme::on_actionNuevo_triggered()
 
 void Askme::on_actionLista_triggered(){
 
-    ListaForm *w = new ListaForm(this);
-    cargarSubVentana(w);
-    w->show();
+    ListaForm *a = new ListaForm(this);
+    a->setAsignaturas(m_asignaturas);
+    a->cargarAsignaturas();
+    connect(a, SIGNAL(apunteTomado(Apunte*)), this, SLOT(on_apunteTomado(Apunte*)));
+    cargarSubVentana(a);
+    guardar();
 
 }
 
