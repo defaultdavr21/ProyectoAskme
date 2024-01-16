@@ -174,3 +174,14 @@ void Askme::on_actionLista_triggered(){
 }
 
 
+
+void Askme::on_actionGenerar_triggered(){
+    QuizForm *a = new QuizForm(this);
+    a->setAsignaturas(m_asignaturas);
+    a->cargarAsignaturas();
+    connect(a, SIGNAL(apunteTomado(Apunte*)), this, SLOT(on_apunteTomado(Apunte*)));
+    cargarSubVentana(a);
+    guardar();
+
+}
+

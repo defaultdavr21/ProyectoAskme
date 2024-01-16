@@ -8,6 +8,7 @@
 #include <QDir>
 
 #include "apunteform.h"
+#include "quizform.h"
 #include "asignatura.h"
 #include "listaform.h"
 
@@ -30,6 +31,9 @@ private slots:
     void on_actionNuevo_triggered();
 
     void on_actionLista_triggered();
+
+
+    void on_actionGenerar_triggered();
 
 private:
     Ui::Askme *ui;

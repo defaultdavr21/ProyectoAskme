@@ -17,6 +17,8 @@ SOURCES += \
     main.cpp \
     askme.cpp \
     pregunta.cpp \
+    preguntaform.cpp \
+    quizform.cpp \
     tema.cpp
 
 HEADERS += \
@@ -27,12 +29,16 @@ HEADERS += \
     cuestionario.h \
     listaform.h \
     pregunta.h \
+    preguntaform.h \
+    quizform.h \
     tema.h
 
 FORMS += \
     apunteform.ui \
     askme.ui \
-    listaform.ui
+    listaform.ui \
+    preguntaform.ui \
+    quizform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
