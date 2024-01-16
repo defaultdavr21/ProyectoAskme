@@ -8,8 +8,7 @@ ApunteForm::ApunteForm(QWidget *parent) :
     ui->setupUi(this);
 }
 
-ApunteForm::~ApunteForm()
-{
+ApunteForm::~ApunteForm(){
     delete ui;
 }
 
@@ -25,8 +24,7 @@ void ApunteForm::cargarAsignaturas()
     }
 }
 
-void ApunteForm::on_btnAgregarAsignatura_released()
-{
+void ApunteForm::on_btnAgregarAsignatura_released(){
     bool ok;
     QString nombre = QInputDialog::getText(this,"Nueva asignatura","Nombre",QLineEdit::Normal,"",&ok);
 
@@ -37,8 +35,7 @@ void ApunteForm::on_btnAgregarAsignatura_released()
     }
 }
 
-void ApunteForm::on_btnRefAsig_clicked()
-{
+void ApunteForm::on_btnRefAsig_clicked(){
     cargarAsignaturas();
 }
 

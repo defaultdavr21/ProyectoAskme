@@ -37,6 +37,8 @@ private:
     void cargarLista(QWidget *lista);
     void cargarDatos();
     void guardar();
+    void agregartabla();
+
 
     QList<Asignatura*> m_asignaturas;
 

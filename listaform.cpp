@@ -5,6 +5,8 @@ ListaForm::ListaForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ListaForm){
     ui->setupUi(this);
+    ui->tableCargar->setColumnCount(1);
+
 
 }
 ListaForm::~ListaForm(){
@@ -71,5 +73,7 @@ void ListaForm::cargarTabla(){
                 }
             }
         }
+        connect(ui->cmbtemas, SIGNAL(currentIndexChanged(int)), this, SLOT(cargarTabla()));
+
     }
 

@@ -3,8 +3,8 @@
 
 Askme::Askme(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::Askme)
-{
+    , ui(new Ui::Askme){
+
     ui->setupUi(this);
     cargarDatos();
 }
@@ -141,6 +141,12 @@ void Askme::guardar(){
     }
 }
 
+void Askme::agregartabla(){
+
+
+
+}
+
 
 void Askme::on_actionNuevo_triggered()
 {
@@ -166,4 +172,5 @@ void Askme::on_actionLista_triggered(){
     guardar();
 
 }
+
 
