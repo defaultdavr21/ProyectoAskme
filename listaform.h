@@ -21,7 +21,8 @@ public:
     explicit ListaForm(QWidget *parent = nullptr);
     void setAsignaturas(QList<Asignatura *> &newAsignaturas);
     void cargarAsignaturas();
-    void cargarTabla();
+    void cargarTablaT();
+    void cargarTablaC();
     ~ListaForm();
 
 

@@ -5,9 +5,8 @@ Tema::Tema()
 
 }
 
-Tema::Tema(const QString &nombre) : m_nombre(nombre){
-
-}
+Tema::Tema(const QString &nombre) : m_nombre(nombre)
+{}
 
 void Tema::agregarApunte(Apunte *a)
 {

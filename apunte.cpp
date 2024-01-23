@@ -2,7 +2,7 @@
 
 Apunte::Apunte()
 {
-    m_termino = " ";
+    m_termino = "";
 
 }
 

@@ -6,7 +6,9 @@ ListaForm::ListaForm(QWidget *parent) :
     ui(new Ui::ListaForm){
     ui->setupUi(this);
     ui->tableCargar->setColumnCount(1);
-
+    ui->tableCargarCopt->setColumnCount(1);
+    connect(ui->cmbtemas, SIGNAL(currentIndexChanged(int)), this, SLOT(cargarTablaT()));
+    connect(ui->cmbtemas, SIGNAL(currentIndexChanged(int)), this, SLOT(cargarTablaC()));
 
 }
 ListaForm::~ListaForm(){
@@ -37,43 +39,68 @@ void ListaForm::on_cmbasignaturas_currentIndexChanged(int index){
             ui->cmbtemas->addItem(t->nombre());
         }
     }
-    cargarTabla();
+    cargarTablaT();
+    cargarTablaC();
 }
-void ListaForm::cargarTabla(){
+void ListaForm::cargarTablaT(){
 
     ui->tableCargar->clearContents();
-        ui->tableCargar->setRowCount(0);
+    ui->tableCargar->setRowCount(0);
 
-        int rowCount = 0;
+    int rowCount = 0;
 
-        int asignaturaIndex = ui->cmbasignaturas->currentIndex();
-        if (asignaturaIndex >= 0 && asignaturaIndex < m_asignaturas->size())
-        {
-            Asignatura* asignatura = m_asignaturas->at(asignaturaIndex);
+    int asignaturaIndex = ui->cmbasignaturas->currentIndex();
+    if (asignaturaIndex >= 0 && asignaturaIndex < m_asignaturas->size()){
+        Asignatura* asignatura = m_asignaturas->at(asignaturaIndex);
 
-            int temaIndex = ui->cmbtemas->currentIndex();
-            if (temaIndex >= 0 && temaIndex < asignatura->temas().size())
-            {
-                Tema* tema = asignatura->temas().at(temaIndex);
+        int temaIndex = ui->cmbtemas->currentIndex();
+        if (temaIndex >= 0 && temaIndex < asignatura->temas().size()){
+            Tema* tema = asignatura->temas().at(temaIndex);
 
-                foreach (Apunte* apunte, tema->apuntes())
-                {
-                    // Insertar nueva fila en la tabla
-                    ui->tableCargar->insertRow(rowCount);
+            ui->tableCargar->setColumnCount(1);
+            ui->tableCargar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-                    // Rellenar celdas con datos
-                    QTableWidgetItem* itemTermino = new QTableWidgetItem(apunte->termino());
-                    ui->tableCargar->setItem(rowCount, 0, itemTermino);
-
-                    QTableWidgetItem* itemConcepto = new QTableWidgetItem(apunte->concepto());
-                    ui->tableCargar->setItem(rowCount, 1, itemConcepto);
-
-                    // Incrementar el contador de filas
-                    rowCount++;
-                }
+            foreach (Apunte* apunte, tema->apuntes()){
+                int rowPosition = ui->tableCargar->rowCount();
+                ui->tableCargar->insertRow(rowCount);
+                QTableWidgetItem* itemTermino = new QTableWidgetItem(apunte->termino());
+                ui->tableCargar->setItem(rowCount, 0, itemTermino);
             }
         }
-        connect(ui->cmbtemas, SIGNAL(currentIndexChanged(int)), this, SLOT(cargarTabla()));
-
     }
 
+}
+void ListaForm::cargarTablaC(){
+
+    ui->tableCargarCopt->clearContents();
+    ui->tableCargarCopt->setRowCount(0);
+
+    int rowCount = 0;
+
+    int asignaturaIndex = ui->cmbasignaturas->currentIndex();
+    if (asignaturaIndex >= 0 && asignaturaIndex < m_asignaturas->size())
+    {
+        Asignatura* asignatura = m_asignaturas->at(asignaturaIndex);
+
+        int temaIndex = ui->cmbtemas->currentIndex();
+        if (temaIndex >= 0 && temaIndex < asignatura->temas().size())
+        {
+            Tema* tema = asignatura->temas().at(temaIndex);
+
+            ui->tableCargarCopt->setColumnCount(1);
+            ui->tableCargarCopt->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+            foreach (Apunte* apunte, tema->apuntes()){
+
+                int rowPosition = ui->tableCargarCopt->rowCount();
+                ui->tableCargarCopt->insertRow(rowCount);
+
+                QTableWidgetItem* itemConcepto = new QTableWidgetItem(apunte->concepto());
+                ui->tableCargarCopt->setItem(rowCount, 0, itemConcepto);
+
+            }
+        }
+    }
+
+
+}

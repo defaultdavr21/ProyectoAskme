@@ -8,9 +8,13 @@
 #include <QDir>
 
 #include "apunteform.h"
-#include "quizform.h"
-#include "asignatura.h"
+#include "cuestionarioform.h"
+#include "preguntaform.h"
 #include "listaform.h"
+#include "asignatura.h"
+#include "creditosform.h"
+
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Askme; }
@@ -26,23 +30,23 @@ public:
 
 public slots:
     void on_apunteTomado(Apunte *apunte);
+    void on_cuestionarioCreado(Cuestionario *cuestionario);
+    void on_PreguntaCreada(Cuestionario *cuestionario);
+    void guardar();
 
 private slots:
     void on_actionNuevo_triggered();
 
+    void on_actionGenerar_triggered();
+
     void on_actionLista_triggered();
 
-
-    void on_actionGenerar_triggered();
+    void on_actionCreditos_triggered();
 
 private:
     Ui::Askme *ui;
     void cargarSubVentana(QWidget *ventana);
-    void cargarLista(QWidget *lista);
     void cargarDatos();
-    void guardar();
-    void agregartabla();
-
 
     QList<Asignatura*> m_asignaturas;
 

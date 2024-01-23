@@ -13,11 +13,13 @@ void Asignatura::agregarTema(Tema *tema)
     m_temas.append(tema);
 }
 
-const QString &Asignatura::nombre() const{
+const QString &Asignatura::nombre() const
+{
     return m_nombre;
 }
 
-const QList<Tema *> &Asignatura::temas() const{
+const QList<Tema *> &Asignatura::temas() const
+{
     return m_temas;
 }
 

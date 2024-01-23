@@ -12,13 +12,15 @@ SOURCES += \
     apunte.cpp \
     apunteform.cpp \
     asignatura.cpp \
+    creditosform.cpp \
     cuestionario.cpp \
+    cuestionarioform.cpp \
     listaform.cpp \
     main.cpp \
     askme.cpp \
     pregunta.cpp \
     preguntaform.cpp \
-    quizform.cpp \
+    scoreform.cpp \
     tema.cpp
 
 HEADERS += \
@@ -26,19 +28,23 @@ HEADERS += \
     apunteform.h \
     asignatura.h \
     askme.h \
+    creditosform.h \
     cuestionario.h \
+    cuestionarioform.h \
     listaform.h \
     pregunta.h \
     preguntaform.h \
-    quizform.h \
+    scoreform.h \
     tema.h
 
 FORMS += \
     apunteform.ui \
     askme.ui \
+    creditosform.ui \
+    cuestionarioform.ui \
     listaform.ui \
     preguntaform.ui \
-    quizform.ui
+    scoreform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -46,4 +52,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    README.md \
     diagrama.qmodel
