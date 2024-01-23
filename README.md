@@ -1,4 +1,4 @@
-# ASKme
+# Askme
 ## _Tu aplicación para apuntes de clase_
 
 ASKme es una aplicación de escritorio, para generar un cuestionario a partir de apuntes de clase. 
