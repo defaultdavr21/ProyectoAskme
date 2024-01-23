@@ -42,6 +42,7 @@ void ScoreForm::resultado(){
 
     ui->tableRes->setHorizontalHeaderLabels({"Término", "Respuesta"});
     ui->tableRes->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableRes->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     for (int i = 0; i < preguntas.size(); ++i){
     QTableWidgetItem *terminoItem = new QTableWidgetItem(preguntas[i]->apunte()->termino());

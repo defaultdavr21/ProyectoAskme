@@ -59,6 +59,7 @@ void ListaForm::cargarTablaT(){
 
             ui->tableCargar->setColumnCount(1);
             ui->tableCargar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            ui->tableCargar->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
             foreach (Apunte* apunte, tema->apuntes()){
                 int rowPosition = ui->tableCargar->rowCount();
@@ -89,6 +90,7 @@ void ListaForm::cargarTablaC(){
 
             ui->tableCargarCopt->setColumnCount(1);
             ui->tableCargarCopt->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            ui->tableCargarCopt->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
             foreach (Apunte* apunte, tema->apuntes()){
 

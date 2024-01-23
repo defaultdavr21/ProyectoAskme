@@ -79,61 +79,62 @@ void Askme::guardar(){
 void Askme::cargarDatos(){
 
 
-   QFile file("apuntes.csv");
-    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        QTextStream entrada(&file);
-        entrada.readLine();
-        while(!entrada.atEnd())
-        {
-            QString linea = entrada.readLine();
-            QStringList datos = linea.split("\t");
-            if(datos.size() >= 4)
-            {
-                QString nombreAsignatura = datos[0].trimmed();
-                QString nombreTema = datos[1].trimmed();
-                QString termino = datos[2].trimmed();
-                QString concepto = datos[3].trimmed();
-                Asignatura *asignatura = nullptr;
-                Tema *tema = nullptr;
+    QFile file("apuntes.csv");
+     if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+     {
+         QTextStream entrada(&file);
+         entrada.readLine();
+         while(!entrada.atEnd())
+         {
+             QString linea = entrada.readLine();
+             QStringList datos = linea.split("\t");
+             if(datos.size() >= 4)
+             {
+                 QString nombreAsignatura = datos[0].trimmed();
+                 QString nombreTema = datos[1].trimmed();
+                 QString termino = datos[2].trimmed();
+                 QString concepto = datos[3].trimmed();
+                 Asignatura *asignatura = nullptr;
+                 Tema *tema = nullptr;
 
 
-                foreach(Asignatura *a, m_asignaturas)
-                {
-                    if(a->nombre() == nombreAsignatura)
-                    {
-                        asignatura = a;
-                        foreach(Tema *t, a->temas())
-                        {
-                            if(t->nombre() == nombreTema)
-                            {
-                                tema = t;
-                                break;
-                            }
-                        }
-                        break;
-                    }
-                }
-                if (!asignatura)
-                {
-                    asignatura = new Asignatura(nombreAsignatura);
-                    m_asignaturas.append(asignatura);
-                }
-                if (!tema)
-                {
-                    tema = new Tema(nombreTema);
-                    asignatura->agregarTema(tema);
-                }
-                Apunte *apunte = new Apunte(termino, concepto);
-                tema->agregarApunte(apunte);
-            }
-        }
-        file.close();
-    }
-    else
-    {
-        QMessageBox::critical(this, "Cargar datos", "No se pudieron cargar los datos");
-    }
+                 foreach(Asignatura *a, m_asignaturas)
+                 {
+                     if(a->nombre() == nombreAsignatura)
+                     {
+                         asignatura = a;
+                         foreach(Tema *t, a->temas())
+                         {
+                             if(t->nombre() == nombreTema)
+                             {
+                                 tema = t;
+                                 break;
+                             }
+                         }
+                         break;
+                     }
+                 }
+                 if (!asignatura)
+                 {
+                     asignatura = new Asignatura(nombreAsignatura);
+                     m_asignaturas.append(asignatura);
+                 }
+                 if (!tema)
+                 {
+                     tema = new Tema(nombreTema);
+                     asignatura->agregarTema(tema);
+                 }
+                 Apunte *apunte = new Apunte(termino, concepto);
+                 tema->agregarApunte(apunte);
+             }
+         }
+         file.close();
+     }
+     else
+     {
+         QMessageBox::critical(this, "Cargar datos", "No se pudieron cargar los datos");
+     }
+
 }
 
 void Askme::on_actionNuevo_triggered()
