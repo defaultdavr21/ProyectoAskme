@@ -5,7 +5,7 @@ Cuestionario::Cuestionario()
 
 }
 
-Cuestionario::Cuestionario(Tema *tema) : m_tema(tema), m_mostradas(0)
+Cuestionario::Cuestionario(QString asignatura,Tema *tema) : m_tema(tema),m_asignatura(asignatura), m_mostradas(0)
 {
     foreach (Apunte *a, m_tema->apuntes()){
         m_preguntas.append(new Pregunta(a));
@@ -62,11 +62,6 @@ const QString Cuestionario::nombreTema() const
     return m_tema->nombre();
 }
 
-const QString Cuestionario::nombreAsig() const
-{
-    return m_asignatura->nombre();
-}
-
 int Cuestionario::totalPreguntas()
 {
     return m_preguntas.size();
@@ -80,4 +75,14 @@ bool Cuestionario::hayMasPreguntas()
 int Cuestionario::mostradas() const
 {
     return m_mostradas;
+}
+
+const QString &Cuestionario::asignatura() const
+{
+    return m_asignatura;
+}
+
+void Cuestionario::setAsignatura(const QString &newAsignatura)
+{
+    m_asignatura = newAsignatura;
 }

@@ -6,6 +6,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDir>
+#include <QMessageBox>
+
 
 #include "apunteform.h"
 #include "cuestionarioform.h"
@@ -42,6 +44,8 @@ private slots:
     void on_actionLista_triggered();
 
     void on_actionCreditos_triggered();
+
+    void on_actionSalir_triggered();
 
 private:
     Ui::Askme *ui;

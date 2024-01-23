@@ -171,3 +171,14 @@ void Askme::on_actionCreditos_triggered()
     CreditosForm *w = new CreditosForm(this);
     cargarSubVentana(w);
 }
+void Askme::on_actionSalir_triggered() {
+    QMessageBox::StandardButton respuesta = QMessageBox::question(this, "Confirmar salida",
+                                                                   "¿Estás seguro de que deseas salir?",
+                                                                   QMessageBox::Yes | QMessageBox::Cancel);
+
+    if (respuesta == QMessageBox::Yes) {
+        this->parentWidget()->close();
+    } else {
+
+    }
+}

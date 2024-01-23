@@ -27,12 +27,12 @@ void ScoreForm::resultado(){
 
     float score = m_cuestionario->score();
     QString tema = m_cuestionario->nombreTema();
-    //QString Asig = m_cuestionario->nombreAsig();
+    QString asig= m_cuestionario->asignatura();
     QString porcentaje = QString::number(score, 'f', 2) + "%";
 
-    //ui->labelasignatura->setText(Asig);
     ui->labelscore->setText(porcentaje);
     ui->labeltema->setText(tema);
+    ui->labelasignatura->setText(asig);
 
 
     QList<Pregunta *> preguntas = m_cuestionario->preguntas();
