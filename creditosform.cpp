@@ -3,51 +3,36 @@
 
 CreditosForm::CreditosForm(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::CreditosForm)
-{
+    ui(new Ui::CreditosForm){
     ui->setupUi(this);
-    connect(ui->Tblcreditos, SIGNAL(itemSelectionChanged()), this, SLOT(onItemSelectionChanged()));
-
-    // Llama a CreditosCargados aquí para cargar la información en la tabla
+    //connect(ui->Tblcreditos, SIGNAL(itemSelectionChanged()), this, SLOT(onItemSelectionChanged()));
     CreditosCargados();
 }
 
-CreditosForm::~CreditosForm()
-{
+CreditosForm::~CreditosForm(){
     delete ui;
 }
+void CreditosForm::CreditosCargados(){
 
-void CreditosForm::CreditosCargados()
-{
-    ui->Tblcreditos->clearContents();
-    ui->Tblcreditos->setRowCount(0);
+    /*ui->Tblcreditos->setRowCount(2);
+    ui->Tblcreditos->setColumnCount(2);
 
-    int rowCount = 0;
+    QStringList header;
+    header << "Autor" << "Coautor";
+    ui->Tblcreditos->setHorizontalHeaderLabels(header);
 
-    // Configurar información en las celdas del QTableWidget según tus necesidades
-    ui->Tblcreditos->setItem(rowCount, 0, new QTableWidgetItem("Autor 1"));
-    ui->Tblcreditos->setItem(rowCount, 1, new QTableWidgetItem("Coautor 1"));
-    rowCount++;
+    QStringList datos;
+    datos << "Rodrigo Tufiño" << "David Ramos";
+    datos << "Ingeniero " << "Estudiante";
+    datos << " " << "Estudiante";
 
-    ui->Tblcreditos->setItem(rowCount, 0, new QTableWidgetItem("Profesión"));
-        ui->Tblcreditos->setSpan(rowCount, 0, 1, 2);
-    rowCount++;
-
-    ui->Tblcreditos->setItem(rowCount, 0, new QTableWidgetItem("http://www.ejemplo.com"));
-    ui->Tblcreditos->setSpan(rowCount, 0, 1, 2);
-    rowCount++;
-
-    ui->Tblcreditos->setItem(rowCount, 0, new QTableWidgetItem("correo@example.com"));
-    ui->Tblcreditos->setSpan(rowCount, 0, 1, 2);
-
-    // Configurar las cabeceras de las columnas
-    ui->Tblcreditos->setHorizontalHeaderLabels({"Autor", "Coautor"});
-
-    // Ajustar el tamaño de las columnas para que se expandan
-    ui->Tblcreditos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    for (int row = 0; row < ui->Tblcreditos->rowCount(); ++row) {
+        for (int col = 0; col < ui->Tblcreditos->columnCount(); ++col) {
+            QTableWidgetItem *item = new QTableWidgetItem(datos[col]);
+            ui->Tblcreditos->setItem(row, col, item);
+        }
+    }*/
 }
+void CreditosForm::onItemSelectionChanged(){
 
-void CreditosForm::onItemSelectionChanged()
-{
-    // Puedes implementar lógica adicional aquí si es necesario
 }
