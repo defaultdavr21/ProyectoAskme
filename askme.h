@@ -53,6 +53,7 @@ private:
     void cargarDatos();
 
     QList<Asignatura*> m_asignaturas;
+    const QString ARCHIVO = "apuntes.csv";
 
 };
 #endif // ASKME_H

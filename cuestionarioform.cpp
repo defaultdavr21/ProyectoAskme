@@ -6,6 +6,7 @@ CuestionarioForm::CuestionarioForm(QWidget *parent) :
     ui(new Ui::CuestionarioForm)
 {
     ui->setupUi(this);
+
 }
 
 CuestionarioForm::~CuestionarioForm()

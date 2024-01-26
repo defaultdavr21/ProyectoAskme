@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Cuestionario</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Recursos/Score.png</normaloff>../Recursos/Score.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <widget class="QLabel" name="label">

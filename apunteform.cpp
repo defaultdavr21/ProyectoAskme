@@ -6,6 +6,8 @@ ApunteForm::ApunteForm(QWidget *parent) :
     ui(new Ui::ApunteForm)
 {
     ui->setupUi(this);
+    QIcon icon(":/ruta/al/icono/icono.ico");
+    setWindowIcon(icon);
 }
 
 ApunteForm::~ApunteForm()

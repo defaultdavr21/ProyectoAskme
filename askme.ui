@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Askme</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Recursos/Askme.png</normaloff>../Recursos/Askme.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
@@ -32,7 +36,7 @@ border-color: rgb(215, 239, 244);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -43,12 +47,20 @@ border-color: rgb(215, 239, 244);</string>
      <property name="title">
       <string>&amp;Apuntes</string>
      </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../formato-de-texto.png</normaloff>../../formato-de-texto.png</iconset>
+     </property>
      <addaction name="actionNuevo"/>
      <addaction name="actionLista"/>
     </widget>
     <widget class="QMenu" name="menuPreguntas">
      <property name="title">
       <string>&amp;Preguntas</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../pregunta.png</normaloff>../../pregunta.png</iconset>
      </property>
      <addaction name="actionGenerar"/>
     </widget>
@@ -69,6 +81,10 @@ border-color: rgb(215, 239, 244);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNuevo">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Recursos/ActionNuevo.png</normaloff>../Recursos/ActionNuevo.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Nuevo</string>
    </property>
@@ -80,6 +96,10 @@ border-color: rgb(215, 239, 244);</string>
    </property>
   </action>
   <action name="actionLista">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Recursos/ActionLista.png</normaloff>../Recursos/ActionLista.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Lista</string>
    </property>
@@ -91,6 +111,10 @@ border-color: rgb(215, 239, 244);</string>
    </property>
   </action>
   <action name="actionGenerar">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Recursos/ActionGenerar.png</normaloff>../Recursos/ActionGenerar.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Generar</string>
    </property>
@@ -102,6 +126,10 @@ border-color: rgb(215, 239, 244);</string>
    </property>
   </action>
   <action name="actionCreditos">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Recursos/ActionCreditos.png</normaloff>../Recursos/ActionCreditos.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Créditos</string>
    </property>
@@ -113,6 +141,10 @@ border-color: rgb(215, 239, 244);</string>
    </property>
   </action>
   <action name="actionSalir">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Recursos/Salir.png</normaloff>../Recursos/Salir.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Salir</string>
    </property>
