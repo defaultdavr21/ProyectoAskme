@@ -45,6 +45,7 @@ FORMS += \
     listaform.ui \
     preguntaform.ui \
     scoreform.ui
+RC_ICONS = AskmeICO.ico
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -54,3 +55,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     README.md \
     diagrama.qmodel
+
+RESOURCES += \
+    Recursos.qrc

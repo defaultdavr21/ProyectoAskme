@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Recursos/AskmeICO.ico</file>
+        <file>Recursos/ActionGenerar.png</file>
+        <file>Recursos/ActionCreditos.png</file>
+        <file>Recursos/ActionLista.png</file>
+        <file>Recursos/ActionNuevo.png</file>
+        <file>Recursos/ActionPreguntas.png</file>
+        <file>Recursos/Askme.png</file>
+        <file>Recursos/Creditos.png</file>
+        <file>Recursos/Cuestionario.png</file>
+        <file>Recursos/formato-de-texto.png</file>
+        <file>Recursos/Lista.png</file>
+        <file>Recursos/Nuevo.png</file>
+        <file>Recursos/Pregunta.png</file>
+        <file>Recursos/Salir.png</file>
+        <file>Recursos/Score.png</file>
+    </qresource>
+</RCC>

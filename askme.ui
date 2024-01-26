@@ -36,7 +36,7 @@ border-color: rgb(215, 239, 244);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -48,8 +48,8 @@ border-color: rgb(215, 239, 244);</string>
       <string>&amp;Apuntes</string>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>../../formato-de-texto.png</normaloff>../../formato-de-texto.png</iconset>
+      <iconset resource="Recursos.qrc">
+       <normaloff>:/new/prefix1/Recursos/formato-de-texto.png</normaloff>:/new/prefix1/Recursos/formato-de-texto.png</iconset>
      </property>
      <addaction name="actionNuevo"/>
      <addaction name="actionLista"/>
@@ -59,8 +59,8 @@ border-color: rgb(215, 239, 244);</string>
       <string>&amp;Preguntas</string>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>../../pregunta.png</normaloff>../../pregunta.png</iconset>
+      <iconset resource="Recursos.qrc">
+       <normaloff>:/new/prefix1/Recursos/ActionPreguntas.png</normaloff>:/new/prefix1/Recursos/ActionPreguntas.png</iconset>
      </property>
      <addaction name="actionGenerar"/>
     </widget>
@@ -82,8 +82,8 @@ border-color: rgb(215, 239, 244);</string>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNuevo">
    <property name="icon">
-    <iconset>
-     <normaloff>../Recursos/ActionNuevo.png</normaloff>../Recursos/ActionNuevo.png</iconset>
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/ActionNuevo.png</normaloff>:/new/prefix1/Recursos/ActionNuevo.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Nuevo</string>
@@ -97,8 +97,8 @@ border-color: rgb(215, 239, 244);</string>
   </action>
   <action name="actionLista">
    <property name="icon">
-    <iconset>
-     <normaloff>../Recursos/ActionLista.png</normaloff>../Recursos/ActionLista.png</iconset>
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/ActionLista.png</normaloff>:/new/prefix1/Recursos/ActionLista.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Lista</string>
@@ -112,8 +112,8 @@ border-color: rgb(215, 239, 244);</string>
   </action>
   <action name="actionGenerar">
    <property name="icon">
-    <iconset>
-     <normaloff>../Recursos/ActionGenerar.png</normaloff>../Recursos/ActionGenerar.png</iconset>
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/ActionGenerar.png</normaloff>:/new/prefix1/Recursos/ActionGenerar.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Generar</string>
@@ -127,8 +127,8 @@ border-color: rgb(215, 239, 244);</string>
   </action>
   <action name="actionCreditos">
    <property name="icon">
-    <iconset>
-     <normaloff>../Recursos/ActionCreditos.png</normaloff>../Recursos/ActionCreditos.png</iconset>
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/ActionCreditos.png</normaloff>:/new/prefix1/Recursos/ActionCreditos.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Créditos</string>
@@ -142,8 +142,8 @@ border-color: rgb(215, 239, 244);</string>
   </action>
   <action name="actionSalir">
    <property name="icon">
-    <iconset>
-     <normaloff>../Recursos/Salir.png</normaloff>../Recursos/Salir.png</iconset>
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/Salir.png</normaloff>:/new/prefix1/Recursos/Salir.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Salir</string>
@@ -156,6 +156,8 @@ border-color: rgb(215, 239, 244);</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>

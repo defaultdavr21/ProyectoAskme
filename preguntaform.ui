@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Recursos/Pregunta.png</normaloff>../Recursos/Pregunta.png</iconset>
+    <normaloff>Recursos/Pregunta.png</normaloff>Recursos/Pregunta.png</iconset>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
